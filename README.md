@@ -1,5 +1,7 @@
 # motd-forge
 
+[![Gem Version](https://img.shields.io/gem/v/motd_forge.svg)](https://rubygems.org/gems/motd_forge)
+
 Generate a randomized login banner (MOTD) for your servers: a title (rendered
 big via `figlet` if it's installed, plain text otherwise), current uptime,
 disk and memory usage, and a random quote.
@@ -11,7 +13,7 @@ disk and memory usage, and a random quote.
 Or from source:
 
     $ bundle install
-    $ rake install
+    $ bundle exec rake install
 
 ## Usage
 
@@ -42,8 +44,8 @@ shell's rc file) so it prints on every SSH login:
 ## Development
 
     $ bundle install
-    $ rake spec        # run the test suite
-    $ bin/console       # interactive prompt
+    $ bundle exec rake spec   # run the test suite
+    $ bin/console             # interactive prompt
 
 ## License
 

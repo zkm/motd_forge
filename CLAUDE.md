@@ -9,6 +9,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 plain bordered header), current uptime/disk/memory stats, and a random quote.
 Intended to be run from a shell login script on homelab servers.
 
+There is also an npm/Node.js port with feature parity at
+[zkm/motd-forge](https://github.com/zkm/motd-forge) (separate repo,
+independent versioning). If a change here affects behavior, output format, or
+CLI flags, check whether it should be mirrored there too.
+
+CI parity gap: the JS port's CI also runs a linter (Biome) and reports test
+coverage to Codecov; this repo's CI only runs `rspec` — no rubocop-equivalent
+lint step, no coverage tool, no Codecov integration. Not yet addressed.
+
 ## Commands
 
 Bundler is configured to install gems into a project-local `vendor/bundle`

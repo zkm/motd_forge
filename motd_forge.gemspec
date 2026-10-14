@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Generate a randomized login banner (MOTD) with system stats and a quote."
   spec.description = "motd-forge builds a custom message-of-the-day banner showing uptime, " \
-                      "disk and memory usage, and a random quote -- handy for homelab servers."
+                     "disk and memory usage, and a random quote -- handy for homelab servers."
   spec.homepage = "https://github.com/zkm/motd_forge"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
@@ -23,8 +23,4 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
-  spec.add_development_dependency "erb"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.13"
 end

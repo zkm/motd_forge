@@ -1,0 +1,34 @@
+plugins:
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - "vendor/**/*"
+    - "pkg/**/*"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+# Adding rubygems_mfa_required would change how releases are pushed; leave that
+# as a deliberate decision rather than a lint fix.
+Gemspec/RequireMFA:
+  Enabled: false
+
+# CLI#parse_options! is one OptionParser block; splitting it would hurt readability.
+Metrics/MethodLength:
+  Max: 20
+
+Naming/MethodParameterName:
+  AllowedNames: [kb]
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Max: 5

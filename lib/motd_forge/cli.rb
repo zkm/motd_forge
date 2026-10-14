@@ -58,7 +58,7 @@ module MotdForge
     def load_config!
       return unless File.exist?(@config_path)
 
-      config = YAML.safe_load(File.read(@config_path)) || {}
+      config = YAML.safe_load_file(@config_path) || {}
       @title = config["title"] if config["title"] && !@title_from_cli
       @quote_file ||= config["quote_file"]
     rescue Psych::SyntaxError

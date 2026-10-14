@@ -14,9 +14,8 @@ There is also an npm/Node.js port with feature parity at
 independent versioning). If a change here affects behavior, output format, or
 CLI flags, check whether it should be mirrored there too.
 
-CI parity gap: the JS port's CI also runs a linter (Biome) and reports test
-coverage to Codecov; this repo's CI only runs `rspec` — no rubocop-equivalent
-lint step, no coverage tool, no Codecov integration. Not yet addressed.
+CI mirrors the JS port's: a RuboCop lint job (the port uses Biome), RSpec on
+Ruby 3.1 and 3.4, and SimpleCov coverage uploaded to Codecov from the 3.4 run.
 
 ## Commands
 
@@ -27,7 +26,10 @@ Because of this, `rake` and `rspec` are **not** on `PATH` globally — always
 prefix with `bundle exec`, not bare `rake`/`rspec`.
 
 - `bundle install` — install dependencies (also runnable via `bin/setup`)
-- `bundle exec rake spec` — run the full RSpec suite (default rake task)
+- `bundle exec rake` — run RSpec then RuboCop (default rake task, what CI checks)
+- `bundle exec rake spec` — run the full RSpec suite only
+- `COVERAGE=1 bundle exec rake spec` — run specs with SimpleCov; HTML and Cobertura reports land in `coverage/`
+- `bundle exec rubocop` / `bundle exec rubocop -a` — lint / apply safe autocorrections
 - `bundle exec rspec spec/motd_forge/quotes_spec.rb` — run a single spec file
 - `bundle exec rspec spec/motd_forge/quotes_spec.rb:10` — run a single example by line number
 - `bin/console` — load the gem into an IRB session for manual testing

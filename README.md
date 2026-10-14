@@ -1,6 +1,8 @@
 # motd-forge
 
 [![Gem Version](https://img.shields.io/gem/v/motd_forge.svg)](https://rubygems.org/gems/motd_forge)
+[![CI](https://github.com/zkm/motd_forge/actions/workflows/ci.yml/badge.svg)](https://github.com/zkm/motd_forge/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/zkm/motd_forge/branch/master/graph/badge.svg)](https://codecov.io/gh/zkm/motd_forge)
 
 Generate a randomized login banner (MOTD) for your servers: a title (rendered
 big via `figlet` if it's installed, plain text otherwise), current uptime,
@@ -44,7 +46,8 @@ shell's rc file) so it prints on every SSH login:
 ## Development
 
     $ bundle install
-    $ bundle exec rake spec   # run the test suite
+    $ bundle exec rake        # run the test suite and RuboCop
+    $ bundle exec rake spec   # run the test suite only
     $ bin/console             # interactive prompt
 
 ## License

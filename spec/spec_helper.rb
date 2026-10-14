@@ -1,5 +1,17 @@
 # frozen_string_literal: true
 
+if ENV["COVERAGE"]
+  require "simplecov"
+  require "simplecov-cobertura"
+
+  SimpleCov.start do
+    add_filter "/spec/"
+    formatter SimpleCov::Formatter::MultiFormatter.new(
+      [SimpleCov::Formatter::HTMLFormatter, SimpleCov::Formatter::CoberturaFormatter]
+    )
+  end
+end
+
 require "tempfile"
 require "motd_forge"
 

@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
+  # Required by GitHub Packages to link the gem to this repository
+  spec.metadata["github_repo"] = "ssh://github.com/zkm/motd_forge"
 
   spec.files = Dir.glob("{lib,exe}/**/*") +
                %w[README.md LICENSE.txt CHANGELOG.md motd_forge.gemspec Gemfile Rakefile]

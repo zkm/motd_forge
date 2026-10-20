@@ -35,7 +35,7 @@ prefix with `bundle exec`, not bare `rake`/`rspec`.
 - `bin/console` — load the gem into an IRB session for manual testing
 - `bundle exec exe/motd-forge` — run the CLI directly from source without installing
 - `bundle exec rake install` — build and install the gem locally
-- `gem push pkg/motd_forge-<version>.gem` — publish to RubyGems (requires a configured API key, see `~/.gem/credentials`)
+- Releases publish automatically: bump `MotdForge::VERSION`, update `CHANGELOG.md`, merge, then publish a GitHub Release tagged `v<version>`. `.github/workflows/publish.yml` lints, runs specs, checks the tag matches the version, and pushes the gem to GitHub Packages and RubyGems.org (trusted publishing, no API key)
 
 ## Architecture
 

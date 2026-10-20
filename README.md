@@ -8,6 +8,8 @@ Generate a randomized login banner (MOTD) for your servers: a title (rendered
 big via `figlet` if it's installed, plain text otherwise), current uptime,
 disk and memory usage, and a random quote.
 
+Also available for Node: [motd-forge on npm](https://www.npmjs.com/package/motd-forge).
+
 ## Installation
 
     $ gem install motd_forge
